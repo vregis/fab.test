@@ -1,11 +1,18 @@
 <?php
+/**
+ * Mysql database Connection class - only one connection allowed
+ *  use Singleton pattern
+ */
 
 namespace model;
 
-class Connect {  // Use Singleton
+class Connect {
     private $_connection;
     private static $_instance;
 
+    /**
+	@return Instance
+	*/
     public static function getInstance() {
         if(!self::$_instance) {
             self::$_instance = new self();
@@ -25,6 +32,9 @@ class Connect {  // Use Singleton
 
     private function __clone() { }
 
+    /**
+	@return mysqli connection
+	*/
     public function getConnection() {
         return $this->_connection;
     }

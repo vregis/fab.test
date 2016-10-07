@@ -1,4 +1,7 @@
 <?php
+/**
+* Config database class
+*/
 namespace model;
 class Config
 {

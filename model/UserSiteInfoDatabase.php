@@ -1,12 +1,36 @@
 <?php
+/**
+ * UserSiteInfoDatabase
+ *
+ * class from user_site_info table
+ * we can use factory in this case if we called this class more
+ */
 namespace model;
-class UserSiteInfoDatabase extends Database {  // we can use factory in this case if we called this class more
+class UserSiteInfoDatabase extends Database {
 
+    /**
+     * @var string
+     */
     protected $date_value;
+    /**
+     * @var string
+     */
     protected $time_value;
+    /**
+     * @var string
+     */
     protected $prev_url;
+    /**
+     * @var string
+     */
     protected $cur_url;
+    /**
+     * @var string
+     */
     protected $t;
+    /**
+     * @var string
+     */
     protected $tablename = 'user_site_info';
 
     public function insert() {

@@ -1,7 +1,15 @@
 <?php
+/**
+ * UpdateLog
+ *
+ * Class parse log files and set data to database
+ */
 namespace model;
 class UpdateLog {
 
+    /**
+     * @var string
+     */
     private $_firstFile = './logs/user_info.log';
     private $_secondFile = './logs/user_site_info.log';
 
@@ -9,7 +17,6 @@ class UpdateLog {
     public function parseFirstLog(){
 
         $file = file($this->_firstFile);
-
         if($file){
             foreach($file as $user){
                 $userinfo = new UserInfoDatabase();
@@ -25,9 +32,6 @@ class UpdateLog {
 
     public function parseSecondLog(){
         $file = file($this->_secondFile);
-
-
-
         if($file){
             foreach($file as $user){
                 $userinfo = new UserSiteInfoDatabase();

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Migration Class
+ */
 namespace model;
 class Migration extends Database
 {
