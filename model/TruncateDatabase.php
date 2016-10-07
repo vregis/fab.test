@@ -1,6 +1,6 @@
 <?php
 
-class TruncateDatabase {  //Decorator
+class TruncateDatabase {  //Adapter
     public function startTruncate(){
         $userinfo = new UserInfoDatabase();
         $userinfo->truncate();

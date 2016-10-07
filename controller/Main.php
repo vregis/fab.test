@@ -20,7 +20,7 @@ class Main {
 
     public function updatelog(){
         $tr = new TruncateDatabase();
-        $tr->startTruncate();  // Use decorator pattern to truncate tables
+        $tr->startTruncate();  // Use adapter pattern to truncate tables
 
         $upd = new UpdateLog();
         $upd->parseFirstLog();
