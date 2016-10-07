@@ -1,6 +1,7 @@
 <?php
 namespace controller;
 use model\DatafromviewDatabase;
+use model\Migration;
 use model\Render;
 use model\TruncateDatabase;
 use model\UpdateLog;
@@ -14,6 +15,7 @@ class Main {
         }else{
             $this->error404();
         }
+
     }
 
     public function run(){
@@ -29,6 +31,11 @@ class Main {
         $upd = new UpdateLog();
         $upd->parseFirstLog();
         $upd->parseSecondLog();
+    }
+
+    public function migrate(){
+        $migrate = new Migration();
+        $migrate->run();
     }
 
     public function error404(){
