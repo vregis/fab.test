@@ -3,19 +3,18 @@ namespace controller;
 use model\DatafromviewDatabase;
 use model\Migration;
 use model\Render;
+use model\Router;
 use model\TruncateDatabase;
 use model\UpdateLog;
 class Main {
 
     public function __construct($url){
-        if($url == ''){
-            $this->run();
-        }elseif(method_exists($this, $url)){
-            $this->$url();
-        }else{
-            $this->error404();
+        $router = new Router();
+        try{
+            $router->getMethod($url, $this);
+        }catch(\Exception $e){
+            echo $e->getMessage();
         }
-
     }
 
     public function run(){
