@@ -6,20 +6,23 @@
 
 namespace model;
 
-class Connect {
+class Connect
+{
     private $_connection;
     private static $_instance;
 
     /**
 	@return Instance
 	*/
-    public static function getInstance() {
+    public static function getInstance()
+    {
         if(!self::$_instance) {
             self::$_instance = new self();
         }
         return self::$_instance;
     }
-    private function __construct() {
+    private function __construct()
+    {
         $config = new Config();
         $this->_connection = new \mysqli($config::HOST, $config::USERNAME,
             $config::PASSWORD, $config::DB);
@@ -35,7 +38,8 @@ class Connect {
     /**
 	@return mysqli connection
 	*/
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->_connection;
     }
 }

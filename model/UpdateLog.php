@@ -5,7 +5,9 @@
  * Class parse log files and set data to database
  */
 namespace model;
-class UpdateLog {
+
+class UpdateLog
+{
 
     /**
      * @var string
@@ -14,7 +16,8 @@ class UpdateLog {
     private $_secondFile = './logs/user_site_info.log';
 
 
-    public function parseFirstLog(){
+    public function parseFirstLog()
+    {
 
         $file = file($this->_firstFile);
         if($file){
@@ -35,7 +38,8 @@ class UpdateLog {
 
     }
 
-    public function parseSecondLog(){
+    public function parseSecondLog()
+    {
         $file = file($this->_secondFile);
         if($file){
             foreach($file as $user){

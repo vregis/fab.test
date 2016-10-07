@@ -3,6 +3,7 @@
  * Migration Class
  */
 namespace model;
+
 class Migration extends Database
 {
     public function run()

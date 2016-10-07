@@ -6,8 +6,11 @@
  * use pattern adapter
  */
 namespace model;
-class TruncateDatabase {
-    public function startTruncate(){
+
+class TruncateDatabase
+{
+    public function startTruncate()
+    {
         $userinfo = new UserInfoDatabase();
         try{
             $userinfo->truncate();

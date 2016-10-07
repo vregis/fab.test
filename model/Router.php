@@ -3,6 +3,7 @@
  * Class Router
  */
 namespace model;
+
 use controller\Main;
 
 class Router
@@ -12,7 +13,8 @@ class Router
      * @param Main $object
      * @throws \Exception
      */
-    public function getMethod($url, $object){
+    public function getMethod($url, $object)
+    {
         if(method_exists($object, $url)){
             $object->$url();
         }else{

@@ -3,7 +3,9 @@
 * Database Class
 */
 namespace model;
-class Database {
+
+class Database
+{
 
     /**
      * @var string
@@ -36,7 +38,8 @@ class Database {
     /**
      * Truncate table, from tablename
      */
-    public function truncate(){
+    public function truncate()
+    {
         if($this->tablename != null){
             $sql = 'TRUNCATE TABLE '.$this->tablename.'';
             if(!$this->db->query($sql)){
@@ -52,49 +55,57 @@ class Database {
     /**
      * @param string $ip
      */
-    public function setIp($ip){
+    public function setIp($ip)
+    {
         $this->ip_address = $ip;
     }
     /**
      * @param string $browser
      */
-    public function setBrowser($browser){
+    public function setBrowser($browser)
+    {
         $this->browser = $browser;
     }
     /**
      * @param string $os
      */
-    public function setOs($os){
+    public function setOs($os)
+    {
         $this->os = $os;
     }
     /**
      * @param string $date_value
      */
-    public function setDateValue($date_value){
+    public function setDateValue($date_value)
+    {
         $this->date_value = $date_value;
     }
     /**
      * @param string $time_value
      */
-    public function setTimeValue($time_value){
+    public function setTimeValue($time_value)
+    {
         $this->time_value = $time_value;
     }
     /**
      * @param string $prev_url
      */
-    public function setPrevUrl($prev_url){
+    public function setPrevUrl($prev_url)
+    {
         $this->prev_url = $prev_url;
     }
     /**
      * @param string $cur_url
      */
-    public function setCurUrl($cur_url){
+    public function setCurUrl($cur_url)
+    {
         $this->cur_url = $cur_url;
     }
     /**
      * @param string $t
      */
-    public function setT($t){
+    public function setT($t)
+    {
         $this->t = $t;
     }
 

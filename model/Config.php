@@ -3,6 +3,7 @@
 * Config database class
 */
 namespace model;
+
 class Config
 {
     const HOST = 'fab.test:3306';
