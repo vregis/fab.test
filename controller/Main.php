@@ -1,5 +1,9 @@
 <?php
-
+namespace controller;
+use model\DatafromviewDatabase;
+use model\Render;
+use model\TruncateDatabase;
+use model\UpdateLog;
 class Main {
 
     public function __construct($url){

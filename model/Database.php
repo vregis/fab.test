@@ -1,5 +1,5 @@
 <?php
-
+namespace model;
 class Database {
 
     protected $db;

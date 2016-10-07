@@ -1,5 +1,5 @@
 <?php
-
+namespace model;
 class DatafromviewDatabase extends Database {
 
     private $_firstUrl;

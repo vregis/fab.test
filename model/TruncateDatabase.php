@@ -1,5 +1,5 @@
 <?php
-
+namespace model;
 class TruncateDatabase {  //Adapter
     public function startTruncate(){
         $userinfo = new UserInfoDatabase();

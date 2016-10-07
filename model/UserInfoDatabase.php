@@ -1,5 +1,5 @@
 <?php
-
+namespace model;
 class UserInfoDatabase extends Database {  // we can use factory in this case if we called this class more
 
     protected $tablename = 'user_info';

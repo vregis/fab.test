@@ -1,5 +1,7 @@
 <?php
 
+namespace model;
+
 class Connect {  // Use Singleton
     private $_connection;
     private static $_instance;
@@ -15,7 +17,7 @@ class Connect {  // Use Singleton
         return self::$_instance;
     }
     private function __construct() {
-        $this->_connection = new mysqli($this->_host, $this->_username,
+        $this->_connection = new \mysqli($this->_host, $this->_username,
             $this->_password, $this->_database);
 
         if(mysqli_connect_error()) {

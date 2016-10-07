@@ -1,5 +1,5 @@
 <?php
-
+namespace model;
 class UpdateLog {
 
     private $_firstFile = './logs/user_info.log';
