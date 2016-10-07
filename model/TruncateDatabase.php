@@ -9,8 +9,18 @@ namespace model;
 class TruncateDatabase {
     public function startTruncate(){
         $userinfo = new UserInfoDatabase();
-        $userinfo->truncate();
+        try{
+            $userinfo->truncate();
+        }catch (\Exception $e){
+            echo $e->getMessage();
+        }
+
         $usersiteinfo = new UserSiteInfoDatabase();
-        $usersiteinfo->truncate();
+        try{
+            $usersiteinfo->truncate();
+        }catch (\Exception $e){
+            $e->getMessage();
+        }
+
     }
 }

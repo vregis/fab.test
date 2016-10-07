@@ -38,7 +38,11 @@ class Database {
      */
     public function truncate(){
         if($this->tablename != null){
-            $this->db->query('TRUNCATE TABLE '.$this->tablename.'');
+            $sql = 'TRUNCATE TABLE '.$this->tablename.'';
+            if(!$this->db->query($sql)){
+                throw new \Exception('Truncate table error');
+            }
+
         }
     }
 

@@ -13,8 +13,15 @@ class UserInfoDatabase extends Database {
      */
     protected $tablename = 'user_info';
 
+    /**
+     * @throws \Exception
+     */
     public function insert() {
-        $this->db->query('INSERT into '.$this->tablename.' (ip_address, browser, os) VALUES("'.$this->ip_address.'", "'.$this->browser.'", "'.$this->os.'")', MYSQLI_USE_RESULT);
+        $sql = 'INSERT into '.$this->tablename.' (ip_address, browser, os) VALUES("'.$this->ip_address.'", "'.$this->browser.'", "'.$this->os.'")';
+        if(!$this->db->query($sql, MYSQLI_USE_RESULT)){
+            throw new \Exception('Insert database error');
+        }
+
     }
 
 }

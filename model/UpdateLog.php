@@ -24,7 +24,12 @@ class UpdateLog {
                 $userinfo->setIp($stringpart[0]);
                 $userinfo->setBrowser($stringpart[1]);
                 $userinfo->setOs($stringpart[2]);
-                $userinfo->insert();
+                try{
+                    $userinfo->insert();
+                }catch (\Exception $e){
+                    echo $e->getMessage();
+                }
+
             }
         }
 
@@ -41,7 +46,11 @@ class UpdateLog {
                 $userinfo->setIp($stringpart[2]);
                 $userinfo->setPrevUrl($stringpart[3]);
                 $userinfo->setCurUrl($stringpart[4]);
-                $userinfo->insert();
+                try{
+                    $userinfo->insert();
+                }catch (\Exception $e){
+                    echo $e->getMessage();
+                }
             }
         }
     }
